@@ -145,13 +145,13 @@ dependencies {
     implementation fg.deobf("appeng:appliedenergistics2-forge:${ae2_version}")
 
     //These dependencies are only used to ease local testing and should never be enabled for a "production" build
-    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
-    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
-    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
-    implementation fg.deobf("curse.maven:solar-flux-reborn-246974:5303143")
-    implementation fg.deobf("curse.maven:hammer-lib-247401:5439462")
-    implementation fg.deobf("curse.maven:storage-drawers-223852:5152196")
-    implementation fg.deobf("curse.maven:patchouli-306770:4966125")
+    //compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    //compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+    //runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+    //implementation fg.deobf("curse.maven:solar-flux-reborn-246974:5303143")
+    //implementation fg.deobf("curse.maven:hammer-lib-247401:5439462")
+    //implementation fg.deobf("curse.maven:storage-drawers-223852:5152196")
+    //implementation fg.deobf("curse.maven:patchouli-306770:4966125")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
@@ -201,6 +201,9 @@ publishing {
     publications {
         register('mavenJava', MavenPublication) {
             artifact jar
+            groupId = mod_group_id
+            artifactId = mod_id
+            version = mod_version
         }
     }
     repositories {
