@@ -42,11 +42,6 @@ public abstract class AbstractAlchemistryAutocraftingProvider implements ICrafti
     }
 
     @Override
-    public PatternContainerGroup getCraftingMachineInfo() {
-        return PatternContainerGroup.fromMachine(Objects.requireNonNull(blockEntity.getLevel()), blockEntity.getBlockPos(), Direction.EAST);
-    }
-
-    @Override
     public boolean pushPattern(IPatternDetails patternDetails, KeyCounter[] inputs, Direction ejectionDirection) {
         if (!blockEntity.getInputHandler().isEmpty() || blockEntity.isProcessingPaused()) return false;
         if (patternDetails instanceof AEProcessingPattern processingPattern) {
